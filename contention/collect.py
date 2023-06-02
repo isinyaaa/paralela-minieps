@@ -20,6 +20,8 @@ def main():
             for array_exp in range(1, 21):
                 print(f"if_count: {if_count}, threads: {thread_count}, array_exp: {array_exp}")
                 time = run(thread_count, 2**array_exp)
+                time = int(float(time))
+                assert time > 0, f"{time=} is not positive"
                 runs.append({"if_count": if_count,
                              "threads": thread_count, "array_exp": array_exp,
                              "time": time})

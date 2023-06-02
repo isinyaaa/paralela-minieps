@@ -142,9 +142,10 @@ int main(int argc, char **argv)
         }
 
         gettimeofday(&end, NULL);
-        double elapsed_time = (end.tv_sec - start.tv_sec) +
-                              (end.tv_usec - start.tv_usec) / 1000000.0;
-        printf("%.4fs\n", elapsed_time);
+        double elapsed_time = end.tv_usec - start.tv_usec;
+        if (start.tv_sec != end.tv_sec)
+                elapsed_time += (end.tv_sec - start.tv_sec) * 1000000;
+        printf("%f\n", elapsed_time);
 
         // Se quiser conferir o valor final de max, descomente a linha a seguir:
         // printf("max: %lf\n", max);
