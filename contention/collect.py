@@ -14,7 +14,7 @@ def run(threads, array_size):
 
 def main():
     runs = []
-    for if_count in range(4):
+    for if_count in range(2):
         compile(if_count)
         for thread_count in range(32, 257, 32):
             for array_exp in range(1, 21):
