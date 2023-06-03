@@ -50,3 +50,8 @@ Now we look for different numbers of threads, and notice that for smaller
 values, closer to the number of cores, we have better performance.
 
 ![threads](images/threads.png)
+
+Notice also that for small workloads (ratio of array size/threads) we still
+have statistically insignificant results, thus we try to keep that ratio high.
+
+![workload](images/workload.png)

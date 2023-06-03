@@ -21,6 +21,8 @@ def main():
         compile(if_count)
         exp = int(math.log2(cpu_count()))
         for thread_count in range(1, 2**(exp + 2) + 1):
+            # we need the workload to be about 20000 values/thread
+            for array_exp in range(exp + 14, exp + 19):
                 print(f"if_count: {if_count}, threads: {thread_count}, array_exp: {array_exp}")
                 time = run(thread_count, 2**array_exp)
                 time = int(float(time))
