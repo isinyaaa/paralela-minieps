@@ -64,3 +64,7 @@ for 8 threads, which is the number of cores in our machine (no hyperthreading)
 (see Figure 5).
 
 ![threads](images/threads2.png)
+
+Now we plot the errors for IF=0 and IF=1 and some values of N (see Figure 6).
+
+![errors](images/errors.png)
