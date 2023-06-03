@@ -1,4 +1,6 @@
 import csv
+import math
+from multiprocessing import cpu_count
 import subprocess
 
 
@@ -14,10 +16,11 @@ def run(threads, array_size):
 
 def main():
     runs = []
+    print(f"CPU count: {cpu_count()}")
     for if_count in range(2):
         compile(if_count)
-        for thread_count in range(32, 257, 32):
-            for array_exp in range(1, 21):
+        exp = int(math.log2(cpu_count()))
+        for thread_count in range(1, 2**(exp + 2) + 1):
                 print(f"if_count: {if_count}, threads: {thread_count}, array_exp: {array_exp}")
                 time = run(thread_count, 2**array_exp)
                 time = int(float(time))

@@ -45,3 +45,8 @@ lock while we only perform a lot check in the thread cache.
 Of course, for N > 1 we have the same redundancy but it doesn't make a
 difference as only a very large amount of (non-compiler optimized) checks would
 make a difference.
+
+Now we look for different numbers of threads, and notice that for smaller
+values, closer to the number of cores, we have better performance.
+
+![threads](images/threads.png)
