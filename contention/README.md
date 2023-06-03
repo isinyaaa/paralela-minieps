@@ -6,12 +6,13 @@ In order to automate data collection we wrote a small Python script that
 generates a CSV file with the data we need. The script is called `collect.py`.
 
 We notice that, due to formatting, there isn't enough precision to measure
-results accurately.
+results accurately (see Figure 1).
 
 ![small](images/small.png)
 
 Thus, we decide to change the code to use the `tv_usec` field of the `timeval`
-struct. Now, notice how IF > 1 makes no difference in the results.
+struct. Now, notice how IF > 1 makes no difference in the results (see Figure
+2).
 
 ![IF](images/if.png)
 
@@ -47,16 +48,19 @@ difference as only a very large amount of (non-compiler optimized) checks would
 make a difference.
 
 Now we look for different numbers of threads, and notice that for smaller
-values, closer to the number of cores, we have better performance.
+values, closer to the number of cores, we have better performance (see Figure
+3).
 
 ![threads](images/threads.png)
 
 Notice also that for small workloads (ratio of array size/threads) we still
-have statistically insignificant results, thus we try to keep that ratio high.
+have statistically insignificant results, thus we try to keep that ratio high
+(see Figure 4).
 
 ![workload](images/workload.png)
 
 Now that we have less noise, we can see that the best performance is achieved
-for 8 threads, which is the number of cores in our machine (no hyperthreading).
+for 8 threads, which is the number of cores in our machine (no hyperthreading)
+(see Figure 5).
 
 ![threads](images/threads2.png)
