@@ -55,3 +55,8 @@ Notice also that for small workloads (ratio of array size/threads) we still
 have statistically insignificant results, thus we try to keep that ratio high.
 
 ![workload](images/workload.png)
+
+Now that we have less noise, we can see that the best performance is achieved
+for 8 threads, which is the number of cores in our machine (no hyperthreading).
+
+![threads](images/threads2.png)
